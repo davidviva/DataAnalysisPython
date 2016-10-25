@@ -40,8 +40,8 @@ def search(path):
 	since = dt.strftime("%Y-%m-%d")
 	until = (dt + datetime.timedelta(days = 1)).strftime("%Y-%m-%d")
 
-	count = 200
-	iterator = twitter.search.tweets(q = args.term, count = count, since = since, until = until)
+	count = 100
+	iterator = twitter.search.tweets(q = args.term, count = 100, since = since, until = until)
 
 	newpath = path + "/" + since
 	checkFolder(newpath)
