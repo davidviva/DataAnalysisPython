@@ -43,7 +43,11 @@ Author: Yan Wu
 
 5. Analysis4.py
    # aim: find number of questions and number of answered questions for each tag
-   # step: (1)
+   # step: (1) read question.json and get the answered data
+           (2) build the dictionary to calculate the questions
+   # data structure: 
+           (1) list: [number of questions, number of answered questions]
+           (2) dictionary: {tag, list}
 
 6. Analysis5.py
    # aim: find the user whose questions have highest accumulated scores
