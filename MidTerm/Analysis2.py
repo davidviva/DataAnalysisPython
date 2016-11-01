@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# coding: utf-8
 
 # Author: Yan Wu
 
@@ -6,12 +7,16 @@ import json
 import os
 import sys
 import requests
+import csv
+
+# check if the given path is valid, or create a new folder
+def checkFolder(path):
+	if not os.path.exists(path):
+		os.makedirs(path)
+	else:
+		print("Already exists the folder")
 
 def query(path):
-
-	#f = open(path + "/tags.json", 'w+')
-	#t_count = 500
-	#f.write("[")
 
 	input_file = open(path + "/users.json", "r")
 	# tag_dic : {tag, {userId, reputation}}
@@ -42,37 +47,28 @@ def query(path):
 				tag_dic[tag] = {}
 				tag_dic[tag][userId] = reputation
 
+
+    
+	# Write the result into the .csv file
 	for tag in tag_dic.keys():
+
+		csvfile = open(path + "/analysis2/" + tag + ".csv", 'w')
+		writer = csv.writer(csvfile)
+		title = ["tag", "userId", "userName", "Link", "Reputation"]
+		writer.writerow(title)
 		for user in sorted(tag_dic[tag], key=tag_dic[tag].get, reverse=True):
-			print("userId: " + str(user))
 			userInfo = user_dic[user]
-			print("userName: " + userInfo[0])
-			print("link: " + userInfo[1])
+			data = [tag, user, userInfo[0], userInfo[1], userInfo[2]]
+			writer.writerow(data)
+		csvfile.close()
 
-
-#		# map userId to the tags
-#		my_dictionary[user] = list
-
-		#for u in user.json()["items"]:
-		#	t_count -= 1
-#
-#			if t_count < 0:
-#			    break
-#
-#			if t_count == 0:
-#			    f.write(json.dumps(u))
-#			    continue
-#
-#			f.write(json.dumps(u))
-#			f.write(",") 
-#			f.write("\n")
-#	f.write("]")
-#	f.close()
 	input_file.close()
 
+def search():
 
 ScriptPath = os.path.split( os.path.realpath(sys.argv[0]))[0]
 path = ScriptPath + "/stackApi"
+checkFolder(path + "/analysis2")
 query(path)
 
 

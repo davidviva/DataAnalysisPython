@@ -1,17 +1,13 @@
 #!/usr/bin/python
+# coding: utf-8
 
 # Author: Yan Wu
 
+import csv
 import json
 import os
 import sys
 import requests
-
-def checkFolder(path):
-	if not os.path.exists(path):
-		os.makedirs(path)
-	else:
-		print("Already exists the folder")
 
 def query(path):
 	my_dictionary = {}
@@ -19,7 +15,6 @@ def query(path):
 	f = open(path + "/users.json", 'w+')
 	t_count = 500
 	f.write("[")
-	list = []
 
 	input_file = open(path + "/questions.json", "r")
 
@@ -50,22 +45,30 @@ def query(path):
 				    f.write(json.dumps(u))
 				    continue
 
-				print(json.dumps(u))
 				f.write(json.dumps(u))
 				f.write(",") 
 				f.write("\n")
 	f.write("]")
 	f.close()
 	input_file.close()
+	
+	sortList = sorted(my_dictionary, key=my_dictionary.get, reverse=True)
+	writeFile(sortList, my_dictionary, path)
 
-	print("badge count by reverse order: ")
-	for w in sorted(my_dictionary, key=my_dictionary.get, reverse=True):
-		print(w, my_dictionary[w])
+def writeFile(list, dic, path): 
+	csvfile = open(path + "/analysis1.csv", 'w')
+	writer = csv.writer(csvfile)
+	title = ["title", "weightage"]
+	writer.writerow(title)
+	for item in list:
+		data = [item, dic[item]]
+		writer.writerow(data)
+	csvfile.close()
 
 ScriptPath = os.path.split( os.path.realpath(sys.argv[0]))[0]
 path = ScriptPath + "/stackApi"
-checkFolder(path)
 query(path)
+print("Completed! Please go to check analysis1.csv")
 
 
 
