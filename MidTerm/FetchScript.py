@@ -46,7 +46,7 @@ def query(path):
 
 # Get the directory of current script
 ScriptPath = os.path.split( os.path.realpath(sys.argv[0]))[0]
-path = ScriptPath + "/stackApi"
+path = ScriptPath + "/data"
 
 checkFolder(path)
 query(path)

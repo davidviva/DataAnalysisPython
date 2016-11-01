@@ -66,7 +66,7 @@ def writeFile(list, dic, path):
 	csvfile.close()
 
 ScriptPath = os.path.split( os.path.realpath(sys.argv[0]))[0]
-path = ScriptPath + "/stackApi"
+path = ScriptPath + "/data"
 query(path)
 print("Completed! Please go to check analysis1.csv")
 

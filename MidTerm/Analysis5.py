@@ -49,7 +49,7 @@ def query(path):
 
 
 ScriptPath = os.path.split( os.path.realpath(sys.argv[0]))[0]
-path = ScriptPath + "/stackApi"
+path = ScriptPath + "/data"
 query(path)
 
 

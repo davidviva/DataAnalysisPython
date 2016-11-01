@@ -11,7 +11,7 @@ import csv
 
 # Get the directory of the collected data
 ScriptPath = os.path.split( os.path.realpath(sys.argv[0]))[0]
-path = ScriptPath + "/stackApi"
+path = ScriptPath + "/data"
 
 # key: tag, value: [number of questions, number of questions were answered]
 tag_dict = {}

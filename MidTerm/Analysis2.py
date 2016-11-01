@@ -64,10 +64,8 @@ def query(path):
 
 	input_file.close()
 
-def search():
-
 ScriptPath = os.path.split( os.path.realpath(sys.argv[0]))[0]
-path = ScriptPath + "/stackApi"
+path = ScriptPath + "/data"
 checkFolder(path + "/analysis2")
 query(path)
 
