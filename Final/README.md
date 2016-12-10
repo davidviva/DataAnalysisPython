@@ -80,3 +80,6 @@
       &emsp;step1: use pearson algorithm to find similar users  
       &emsp;step2: train the engine first, and use the test data to test
   3.result
+
+### DashBoard:  
+  1.use TKinter and tkMessageBox  
