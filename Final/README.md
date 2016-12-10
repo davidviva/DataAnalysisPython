@@ -30,7 +30,7 @@
       &emsp;step3: calculate average ratings of each genre in each dimension  
       &emsp;step4: generate heatmap and plot chart to present the results  
   3.result:   
-        ![age-figure](Final/output/Analysis1/genre_age_fig.png) 
+        ![age-figure](DataAnalysisPython/Final/output/Analysis1/genre_age_fig.png) 
         ![gender-figure](URL)
         ![occupation-figure](URL)
         
