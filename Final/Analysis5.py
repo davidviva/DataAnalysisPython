@@ -33,20 +33,14 @@ path = ScriptPath + "/output"
 
 def  calculate(data):
 	data = data.sort_values(by = 'rating', ascending=False)
-	#if data[data.age == args.age].size() is 0:
-	#	return data.ix[:args.topK]
-	age = data[data.age == args.age]
-
-	#if data[data.gender == args.gender].size() is 0:
-		#return age.ix[:args.topK]
-	gender = age[data.gender == arge.gender]
-
-	#if data[data.job_description == args.occup].size() is 0:
-	#	return gender.ix[:args.topK]
-	occupation = gender[data.job_description == arge.occup]
+	age = data[data['age'] == int(args.age)]
+	gender = age[data['gender'] == args.gender]
+	occupation = gender[data['job_description'] == args.occup]
+	mean_ratings = pd.pivot_table(occupation, values= 'rating',index=['title'],columns='gender',aggfunc='mean')
 	
-	return  occupation.ix[:args.topK]
+	return  mean_ratings[:int(args.topK)]
 
 result = calculate(df)
+result.to_csv(path + '/Analysis5/recommendation.csv')
 print(result)
 
