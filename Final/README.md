@@ -83,3 +83,5 @@
 
 ### DashBoard:  
   1.use TKinter and tkMessageBox  
+    ![](/output/dashboard.png)  
+    
