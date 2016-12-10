@@ -13,13 +13,14 @@
   
 ### CollectData and pre-processing:  
   1.CollecteData: download .csv files directly  
-  2.pre-processing: (1) load all the files    
-                    (2) extract publican year from movie titles and add a new column to store it  
-                    (3) convert the rating timestamp into data and get the year and add a new column  
-                    (4) based on genres column, extract unique_genre and record in new added columns  
-                    (5) join the tables(movies.csv, users.csv, ratings.csv) to get a comprehensive table  
-                    (6) drop NAN rows and duplicate rows  
-                    (7) separate the new comprehensive table by genre and create new files for each one  
+  2.pre-processing: 
+  &emsp;(1) load all the files    
+  &emsp;(2) extract publican year from movie titles and add a new column to store it  
+  &emsp;(3) convert the rating timestamp into data and get the year and add a new column  
+  &emsp;(4) based on genres column, extract unique_genre and record in new added columns  
+  &emsp;(5) join the tables(movies.csv, users.csv, ratings.csv) to get a comprehensive table  
+  &emsp;(6) drop NAN rows and duplicate rows  
+  &emsp;(7) separate the new comprehensive table by genre and create new files for each one  
 ### Analysis1:  
   1.aim: calculate the average rating of each movie genre and show in plot chart and heapmap  
   2.process: 
@@ -41,8 +42,8 @@
   3.result:  
   
 ### Analysis3:  
-  1.aim: calculate the average rating of each movie and sort it by men and women, then compare the rating of men and women,
-      find the most disagreement movies  
+  1.aim: calculate the average rating of each movie and sort it by men and women, then compare the rating of men  
+  &emsp;and women, find the most disagreement movies  
   2.process:  
       &emsp;step1: use argparse to get the input(the threshold of fillter data, and the topk number)  
       &emsp;step2: load data: load the user_ratings table  
