@@ -35,7 +35,7 @@ mean_ratings = pd.pivot_table(data, values= 'rating',index=['title'],columns='ge
 ratings_by_title = data.groupby('title').size()
 
 # filter movies that have too few number of ratings
-active_titles = ratings_by_title.index[ratings_by_title >= args.size]  
+active_titles = ratings_by_title.index[ratings_by_title >= int(args.size)]  
 mean_ratings = mean_ratings.ix[active_titles]  
 #print(mean_ratings.head())
 
@@ -45,14 +45,14 @@ topF = mean_ratings.sort_values(by='F', ascending=False)
 
 topM.to_csv(path + '/Analysis3/male_favored.csv')
 topF.to_csv(path + '/Analysis3/female_favored.csv')
-print(topM[:args.top])
-print(topF[:args.top])
+print(topM[:int(args.top)])
+print(topF[:int(args.top)])
 
 #the diff
 mean_ratings['diff'] = mean_ratings['M'] - mean_ratings['F']  
 sorted_by_diff = mean_ratings.sort_values(by='diff') 
-topF.to_csv(path + '/Analysis3/diff.csv')
-#print(sorted_by_diff[:10])
+sorted_by_diff.to_csv(path + '/Analysis3/diff.csv')
+print(sorted_by_diff[:10])
 
 pieces = [sorted_by_diff[:10], sorted_by_diff[-10:]]
 disagreements = pd.concat(pieces)['diff']
