@@ -29,7 +29,10 @@
                get the unique_genres set  
       &emsp;step3: calculate average ratings of each genre in each dimension  
       &emsp;step4: generate heatmap and plot chart to present the results  
-  3.result:  
+  3.result:   
+        ![age-figure](/output/Analysis1/genre_age_fig.png) 
+        ![gender-figure](URL)
+        ![occupation-figure](URL)
         
 ### Analysis2:  
   1.aim: classify users by age, gender, and occupation, and show the result with pie chart  
