@@ -2,6 +2,7 @@
 
 ## Dataset:  
   1.MovieLens:  
+  (http://files.grouplens.org/datasets/movielens/ml-latest-small-README.html)
   &emsp;users.csv: userId, gender, age, occupation, zipcode  
   &emsp;movies.csv: movieId, title, genres  
   &emsp;ratings.csv: userId, movieId, rating, timestamp  
@@ -20,16 +21,29 @@
   &emsp;(4) based on genres column, extract unique_genre and record in new added columns  
   &emsp;(5) join the tables(movies.csv, users.csv, ratings.csv) to get a comprehensive table  
   &emsp;(6) drop NAN rows and duplicate rows  
-  &emsp;(7) separate the new comprehensive table by genre and create new files for each one  
+  &emsp;(7) separate the new comprehensive table by genre and create new files for each genre, store them in /data/genres folder    
+  
 ### Analysis1:  
   1.aim: calculate the average rating of each movie genre and show in plot chart and heapmap  
-  2.process: 
+  2.process:  
       &emsp;step1: use argparse to get the input(age, gender, occupation, or all)  
       &emsp;step2: load data: load the comparehensive table, load occupation detail table, and merge
                get the unique_genres set  
       &emsp;step3: calculate average ratings of each genre in each dimension  
       &emsp;step4: generate heatmap and plot chart to present the results  
   3.result:   
+      &emsp;(1.1) the average ratings for each genre from every age group  
+      ![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis1/genre_age_fig.png)  
+      &emsp;(1.2) the data of above figure  
+      ![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis1/screenshot of csv files/genre_age.png)
+      &emsp;(2.1) the average ratings for each genre from every gender group  
+      ![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis1/genre_gender_fig.png)    
+      &emsp;(2.2) the data of above figure  
+      ![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis1/screenshot of csv files/genre_gender.png)
+      &emsp;(3.1) the average ratings for each genre from every occupation group  
+      ![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis1/genre_occupation_fig.png)    
+      &emsp;(3.2) the data of above figure  
+      ![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis1/screenshot of csv files/genre_occupation.png)
         
 ### Analysis2:  
   1.aim: classify users by age, gender, and occupation, and show the result with pie chart  
