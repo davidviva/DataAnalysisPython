@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
-from Tkinter import *
-import tkMessageBox
+from tkinter import *
+from tkinter import messagebox
 import sys 
 import os
 
@@ -9,25 +9,25 @@ path = os.path.split(os.path.realpath(sys.argv[0]))[0]
 
 def analyze():
 	radioValue = analysis.get()
-	if radioValue == "analysis_1":
+	if radioValue == "Analysis1":
 		prop = parameter1.get()
 		# tkMessageBox.showinfo('Message', "You chose, %s" % carrier)
 		os.system("python " + path + "/Analysis1.py " + prop)
-	elif radioValue == "analysis_2":
+	elif radioValue == "Analysis2":
 		prop = parameter1.get()
 		# tkMessageBox.showinfo('Message', "You chose, %s" % radioValue % city)
 		os.system("python " + path + "/Analysis2.py " + prop)
-	elif radioValue == "analysis_3":
+	elif radioValue == "Analysis3":
 		size = parameter1.get()
 		top = parameter2.get()
 		# tkMessageBox.showinfo('Message', "You chose, %s" % radioValue % month % day)
 		os.system("python " + path + "/Analysis3.py " + size + " " + top)
-	elif radioValue == "analysis_4":
+	elif radioValue == "Analysis4":
 		genre = parameter1.get()
 		age_group = parameter2.get()
 		# tkMessageBox.showinfo('Message', "You chose, %s" % radioValue % month % carrier)
 		os.system("python " + path + "/Analysis4.py " + genre + " " + age_group)
-	elif radioValue == "analysis_5":
+	elif radioValue == "Analysis5":
 		gender.parameter1.get()
 		age.parameter2.get()
 		occupation.parameter3.get()

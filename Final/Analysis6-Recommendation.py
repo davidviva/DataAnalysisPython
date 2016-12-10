@@ -115,7 +115,6 @@ def getRecommendations(user, user_movie, movies, userSim, N):
   
 if __name__ == "__main__":  
   
-  
     # load data  
     user_movie, movies = load_data()  
   
