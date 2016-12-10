@@ -11,7 +11,7 @@
   &emsp;age.csv: age, age_group  
   &emsp;occupation.csv: occupation, description  
   
-### CollectData and pre-processing:  
+### CollectData and pre-processing:    
   1.CollecteData: download .csv files directly  
   2.pre-processing: 
   &emsp;(1) load all the files    
