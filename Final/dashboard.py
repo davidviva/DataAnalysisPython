@@ -10,57 +10,53 @@ path = os.path.split(os.path.realpath(sys.argv[0]))[0]
 def analyze():
 	radioValue = analysis.get()
 	if radioValue == "analysis_1":
-		carrier = parameter1.get()
+		prop = parameter1.get()
 		# tkMessageBox.showinfo('Message', "You chose, %s" % carrier)
-		os.system("python " + path + "/analysis_1.py " + carrier)
+		os.system("python " + path + "/Analysis1.py " + prop)
 	elif radioValue == "analysis_2":
-		city = parameter1.get()
+		prop = parameter1.get()
 		# tkMessageBox.showinfo('Message', "You chose, %s" % radioValue % city)
-		os.system("python " + path + "/analysis_2.py " + city)
+		os.system("python " + path + "/Analysis2.py " + prop)
 	elif radioValue == "analysis_3":
-		month = parameter1.get()
-		day = parameter2.get()
+		size = parameter1.get()
+		top = parameter2.get()
 		# tkMessageBox.showinfo('Message', "You chose, %s" % radioValue % month % day)
-		os.system("python " + path + "/analysis_3.py " + month + " " + day)
+		os.system("python " + path + "/Analysis3.py " + size + " " + top)
 	elif radioValue == "analysis_4":
-		month = parameter1.get()
-		carrier = parameter2.get()
+		genre = parameter1.get()
+		age_group = parameter2.get()
 		# tkMessageBox.showinfo('Message', "You chose, %s" % radioValue % month % carrier)
-		os.system("python " + path + "/analysis_4.py " + month + " " + carrier)
+		os.system("python " + path + "/Analysis4.py " + genre + " " + age_group)
 	elif radioValue == "analysis_5":
-		carrier.parameter1.get()
+		gender.parameter1.get()
+		age.parameter2.get()
+		occupation.parameter3.get()
+		topk.parameter4.get()
 		# tkMessageBox.showinfo('Message', "You chose, %s" % radioValue % carrier)
-		os.system("python " + path + "/analysis_5.py " + carrier)
+		os.system("python " + path + "/Analysis5.py " + gender + " " + age + " " + occupation + " " + topk)
 
 def insert1():
 	yourParameter1.delete(0,END)
 	yourParameter2.delete(0,END)
-	yourParameter1.insert(0, 'AA')
 
 def insert2():
 	yourParameter1.delete(0,END)
 	yourParameter2.delete(0,END)
-	yourParameter1.insert(0, "ATL")
 
 def insert3():
 	yourParameter1.delete(0,END)
 	yourParameter2.delete(0,END)
-	yourParameter1.insert(0, "1")
-	yourParameter2.insert(0, "1")
 
 def insert4():
 	yourParameter1.delete(0,END)
 	yourParameter2.delete(0,END)
-	yourParameter1.insert(0, "1")
-	yourParameter2.insert(0, "AA")
 
 def insert5():
 	yourParameter1.delete(0,END)
 	yourParameter2.delete(0,END)
-	yourParameter1.insert(0, "AA")
 
 app = Tk()
-app.title("Flight Information")
+app.title("Movie rating information")
 app.geometry('600x600+500+500')
 app.configure(background='lightblue')
 
@@ -72,11 +68,11 @@ label1.pack()
 
 analysis = StringVar()
 analysis.set(None)
-radio1 = Radiobutton(app, text = "Flights by carrier (Please input code for carrier)", value = "analysis_1", variable = analysis, command = insert1)
-radio2 = Radiobutton(app, text = "Flights by city (Please inout code for city)", value = "analysis_2", variable = analysis, command = insert2)
-radio3 = Radiobutton(app, text = "Flights by month and day of week (Please inout numeric value for month and day of week)", value = "analysis_3", variable = analysis, command = insert3)
-radio4 = Radiobutton(app, text = "Delayed flights by month and carrier (Please input numeric value for month and code for carrier)", value = "analysis_4", variable = analysis, command = insert4)
-radio5 = Radiobutton(app, text = "Top cities by carrier (Please input code for carrier)", value = "analysis_5", variable = analysis, command = insert5)
+radio1 = Radiobutton(app, text = "Average ratings (Please input age, or gender, or occupation, or all)", value = "Analysis1", variable = analysis, command = insert1)
+radio2 = Radiobutton(app, text = "Sample users ratio (Please input age, or gender, or occupation, or all)", value = "Analysis2", variable = analysis, command = insert2)
+radio3 = Radiobutton(app, text = "Rating disagreement between different genders (Please input the threshold and topk)", value = "aAnalysis3", variable = analysis, command = insert3)
+radio4 = Radiobutton(app, text = "The change of taste of genre (Please input genre and age_group)", value = "Analysis4", variable = analysis, command = insert4)
+radio5 = Radiobutton(app, text = "Recommendations(Please input your information gender, age, occupation, topk)", value = "Analysis5", variable = analysis, command = insert5)
 radio1.configure(background='lightblue')
 radio2.configure(background='lightblue')
 radio3.configure(background='lightblue')
@@ -107,6 +103,26 @@ label3.pack()
 parameter2 = StringVar(None)
 yourParameter2 = Entry(app, textvariable = parameter2)
 yourParameter2.pack()
+
+text3 = StringVar()
+text3.set("parameter 3: ")
+label4 = Label(app, textvariable = text1, height = 4)
+label4.configure(background='lightblue')
+label4.pack()
+
+parameter3 = StringVar(None)
+yourParameter3 = Entry(app, textvariable = parameter3)
+yourParameter3.pack()
+
+text4 = StringVar()
+text4.set("parameter 2: ")
+label5 = Label(app, textvariable = text1, height = 4)
+label5.configure(background='lightblue')
+label5.pack()
+
+parameter4 = StringVar(None)
+yourParameter4 = Entry(app, textvariable = parameter4)
+yourParameter4.pack()
 
 button = Button(app, text = "Submit", width = 20, command = analyze)
 button.pack(side = 'bottom', padx = 15, pady = 15)
