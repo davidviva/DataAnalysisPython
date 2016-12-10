@@ -15,8 +15,7 @@ import seaborn as sns
 
 # get input 
 parser = argparse.ArgumentParser(description='search for diff by different size of sample')
-parser.add_argument("size", help="at least number of samples")
-parser.add_argument("top", help="topk movies favored by male and female")
+parser.add_argument("prop", help="which one want to see")
 args = parser.parse_args()
 
 # Get the path
@@ -71,8 +70,6 @@ def createFig(age, gender, occupation):
 	#plt.show()
 
 
-
-
 data = loadData(path)
 path = ScriptPath +'/output'
 age = data.groupby('age_group').size()
@@ -84,4 +81,12 @@ gender.to_csv(path + '/Analysis2/gender_count.csv')
 occupation = data.groupby('job_description').size()
 occupation.to_csv(path + '/Analysis2/occupation_count.csv')
 
-createFig(age, gender, occupation)
+if args.prop == 'all': 
+	createFig(age, gender, occupation)
+elif args.prop == 'age':
+	ageChart(age)
+elif args.prop == 'gender':
+	genderChart(gender)
+else:
+	occupationChart(occupation)
+

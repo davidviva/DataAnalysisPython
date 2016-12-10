@@ -11,6 +11,13 @@ import pandas as pd
 import numpy as np
 from matplotlib import pyplot as plt
 import seaborn as sns
+import argparse
+
+# get input 
+parser = argparse.ArgumentParser(description='search for diff by different size of sample')
+parser.add_argument("prop", help="which one want to see")
+args = parser.parse_args()
+
 
 # load data
 ScriptPath = os.path.split( os.path.realpath(sys.argv[0]))[0]
@@ -55,14 +62,14 @@ def gender():
 	df_gender.to_csv(path + '/Analysis1/genre_gender.csv')
 	df_gender = df_gender.dropna(how = 'any')
 	#print(df_gender)
-	fig = plt.figure(figsize=(14,8));  
-	ax = fig.add_subplot(1, 1, 1) 
+	plt.figure(figsize=(14,8))
 	list = df_gender.index
-	ax.set_xticklabels(list, rotation=30)
-	ax.set_title('Average ratings of each genre by each gender')
+	plt.xticks(range(len(list)), list, rotation=30)
+	#ax.set_xticklabels(list, rotation=30)
+	plt.title('Average ratings of each genre by each gender')
 	plt.plot(df_gender.M.values, 'gx--', label='male')
 	plt.plot(df_gender.F.values, 'b-', label='female')
-	ax.legend(loc='best') 
+	plt.legend(loc='best') 
 	plt.title("Average ratings of each genre by each age group")
 	plt.ylabel('Rating')
 	plt.xlabel('Genres');
@@ -86,10 +93,17 @@ def occupation():
 	plt.xlabel('Genders');
 	plt.show()
 
-age()
-gender()
-occupation()
 
+if args.prop == 'all': 
+	age()
+	gender()
+	occupation()
+elif args.prop == 'age':
+	age()
+elif args.prop == 'gender':
+	gender()
+else:
+	occupation()
 
 
 

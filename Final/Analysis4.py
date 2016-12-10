@@ -3,49 +3,50 @@
 #%matplotlib inline
 
 # Author: Yan Wu
-# the relationship between rating and age
+# the change of taste of genre  
 
 import os
 import sys
 import pandas as pd
 import numpy as np
+import argparse
 from datetime import datetime
 import matplotlib.pyplot as plt
 
-# Get the directory of current script
+def generateChart():
+	plt.figure(figsize=(14,8))
+	list = mean_ratings.index
+	plt.xticks(range(len(list)), list, rotation=30)
+	plt.title('Rating changes during years for ' + args.genre)
+	#for col in mean_ratings.columns:
+	#	plt.plot(mean_ratings[col].values, label=col)
+	plt.plot(mean_ratings[args.age].values, label=args.age)
+	plt.legend(loc='best') 
+	plt.title("Average ratings of each year by each the given age group")
+	plt.ylabel('Rating')
+	plt.xlabel('Rating Year');
+	plt.show()
+
+# get input 
+parser = argparse.ArgumentParser(description='see the changes of taste in the age group')
+parser.add_argument("genre", help="which one want to see")
+parser.add_argument("age", help="which one want to see")
+args = parser.parse_args()
+
+# load data
 ScriptPath = os.path.split( os.path.realpath(sys.argv[0]))[0]
 path = ScriptPath + "/data"
-print(path)
 
-movies = pd.read_csv(path + '/movies.csv')
-users = pd.read_csv(path + '/users.csv')
-ratings = pd.read_csv(path + '/ratings.csv')
 age = pd.read_csv(path + '/age.csv')
-users1 = pd.merge(users, age)
-data = pd.merge(pd.merge(ratings,users1),movies)
+ratings = pd.read_csv(path + '/genres/' + args.genre + '.csv')
+data = pd.merge(age, ratings)
 
-print(data.head())
+path = ScriptPath + "/output"
 
-#most_rated = lens.groupby('title').size().sort_values(ascending=False)
-#movie_stats = lens.groupby('title').agg({'rating': [np.size, np.mean]})
-#movie_stats.head()
-#atleast_100 = movie_stats['rating']['size'] >= 50
-#movie_stats[atleast_100].sort_values([('rating', 'mean')], ascending=False)
-
-# distribution of users' ages
-users.age.plot.hist(bins=30)
-plt.title("Distribution of users' ages")
-plt.ylabel('count of users')
-plt.xlabel('age');
-plt.show()
-
-data.groupby('age_group').agg({'rating': [np.size, np.mean]})
-most_50 = lens.groupby('movie_id').size().sort_values(ascending=False)[:50]
-lens.set_index('movie_id', inplace=True)
-by_age = lens.loc[most_50.index].groupby(['title', 'age_group'])
-by_age.rating.mean().head(15)
-by_age.rating.mean().unstack(1).fillna(0)[10:20]
-
+mean_ratings = pd.pivot_table(data, values= 'rating',index=['date'],columns='age_group',aggfunc='mean')
+mean_ratings.to_csv(path + '/Analysis4/'+args.genre+'.csv')
+mean_ratings = mean_ratings.dropna(how = 'all')
+generateChart()
 
 
 

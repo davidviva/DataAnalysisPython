@@ -33,13 +33,14 @@ movie_links.title = movie_links.title.apply(lambda x: x[: x.find('(')])
 print(movie_links.head())
 
 # convert timestamp to date
-ratings['date'] = ratings.timestamp.apply(lambda x: datetime.fromtimestamp(int(x)).strftime('%Y-%m-%d'))
+ratings['date'] = ratings.timestamp.apply(lambda x: datetime.fromtimestamp(int(x)).strftime('%Y'))
 
 # separated the genre
 unique_genre = set()
 for genre in movie_links.genres.values:
     unique_genre.update(genre.split('|'))
-print(len(unique_genre))
+#print(len(unique_genre))
+df = pd.merge(pd.merge(movie_links, ratings), users)
 for genre in unique_genre:
     movie_links[genre] = 0
 for genre in unique_genre:
@@ -57,7 +58,10 @@ user_ratings.to_csv(path + '/user_ratings.csv')
 
 
 # separate movies by genres
-
+base_string = path + '/genres/'
+df['cmd'] = base_string
+for genre in unique_genre:
+	df[df['genres'].str.contains(genre)].to_csv(base_string + genre + '.csv')
 
 
 
