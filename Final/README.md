@@ -83,5 +83,5 @@
 
 ### DashBoard:  
   1.use TKinter and tkMessageBox  
-    ![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/dashboard.png)  
+    
     
