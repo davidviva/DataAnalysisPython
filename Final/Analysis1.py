@@ -14,7 +14,7 @@ import seaborn as sns
 import argparse
 
 # get input 
-parser = argparse.ArgumentParser(description='search for diff by different size of sample')
+parser = argparse.ArgumentParser(description='see average ratings in different dimensions')
 parser.add_argument("prop", help="which one want to see")
 args = parser.parse_args()
 
