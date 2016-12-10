@@ -33,17 +33,17 @@
       &emsp;step4: generate heatmap and plot chart to present the results  
   3.result:   
       &emsp;(1.1) the average ratings for each genre from every age group  
-      ![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis1/genre_age_fig.png)  
+      &emsp;![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis1/genre_age_fig.png)    
       &emsp;(1.2) the data of above figure  
-      ![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis1/screenshot of csv files/genre_age.png)
-      &emsp;(2.1) the average ratings for each genre from every gender group  
-      ![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis1/genre_gender_fig.png)    
+      &emsp;![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis1/screenshot of csv files/genre_age.png)  
+      &emsp;(2.1) the average ratings for each genre from every gender group    
+      &emsp;![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis1/genre_gender_fig.png)    
       &emsp;(2.2) the data of above figure  
-      ![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis1/screenshot of csv files/genre_gender.png)
+      &emsp;![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis1/screenshot of csv files/genre_gender.png)  
       &emsp;(3.1) the average ratings for each genre from every occupation group  
-      ![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis1/genre_occupation_fig.png)    
-      &emsp;(3.2) the data of above figure  
-      ![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis1/screenshot of csv files/genre_occupation.png)
+      &emsp;![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis1/genre_occupation_fig.png)  
+      &emsp;(3.2) the data of above figure  7
+      &emsp;![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis1/screenshot of csv files/genre_occupation.png)
         
 ### Analysis2:  
   1.aim: classify users by age, gender, and occupation, and show the result with pie chart  
