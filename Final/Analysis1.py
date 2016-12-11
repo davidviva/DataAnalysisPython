@@ -87,6 +87,8 @@ def occupation():
 	#print(df_occu)
 	plt.figure(figsize=(8,8))
 	sns.set(font_scale=0.8)
+	plt.xticks(rotation=30)
+	plt.yticks(rotation=30)
 	sns.heatmap(df_occu)
 	plt.title("Average ratings of each genre by each occupation")
 	plt.ylabel('Genres')
