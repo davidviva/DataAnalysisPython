@@ -142,5 +142,5 @@
       &emsp;step2: train the engine first, and use the test data to test  
   4.result:  
       &emsp;(1.1) the result contains : (userId: movieId(itemId), predicted rating)  
-      &emsp;![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis6/result-fit.png)    
+      &emsp;![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis6/result_fig.png)    
     
