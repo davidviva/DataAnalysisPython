@@ -32,15 +32,29 @@ df = pd.merge(age, pd.merge(user_ratings, occupation))
 path = ScriptPath + "/output"
 
 def  calculate(data):
-	data = data.sort_values(by = 'rating', ascending=False)
 	age = data[data['age'] == int(args.age)]
 	gender = age[data['gender'] == args.gender]
 	occupation = gender[data['job_description'] == args.occup]
-	mean_ratings = pd.pivot_table(occupation, values= 'rating',index=['title'],columns='gender',aggfunc='mean')
-	
-	return  mean_ratings[:int(args.topK)]
 
-result = calculate(df)
-result.to_csv(path + '/Analysis5/recommendation.csv')
-print(result)
+	ratings_by_title = df.groupby('title').size()
+	active_titles = ratings_by_title.index[ratings_by_title >= 50]  
+
+	mean_ratings = pd.pivot_table(occupation, values= 'rating',index=['title'],columns='gender',aggfunc='mean')
+	mean_ratings = mean_ratings.ix[active_titles]  
+	mean_ratings = mean_ratings.sort_values(by = args.gender, ascending = False)
+	mean_ratings.to_csv(path + '/Analysis5/recommendation.csv') 
+	
+	return  mean_ratings
+
+result = calculate(df)[:int(args.topK)]
+
+plt.figure(figsize=(8,9))
+result.plot(kind='bar', facecolor = 'lightskyblue',edgecolor = 'w')
+plt.xticks(rotation=90) 
+plt.xlabel('Titles')
+plt.ylabel('mean rating')
+plt.title('Top recommendations')
+plt.show()  
+
+#print(result)
 
