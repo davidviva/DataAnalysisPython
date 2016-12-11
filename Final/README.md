@@ -14,15 +14,23 @@
   
 ### CollectData and pre-processing:    
   1.CollecteData: download .csv files directly  
-  2.pre-processing: 
+  2.pre-processing:  
   &emsp;(1) load all the files    
   &emsp;(2) extract publican year from movie titles and add a new column to store it  
-  &emsp;(3) convert the rating timestamp into data and get the year and add a new column  
-  &emsp;(4) based on genres column, extract unique_genre and record in new added columns  
+  &emsp;(3) convert the rating timestamp into date and extract the year to sotre  
+  &emsp;(4) separate the genres of movies  
   &emsp;(5) join the tables(movies.csv, users.csv, ratings.csv) to get a comprehensive table  
-  &emsp;(6) drop NAN rows and duplicate rows  
-  &emsp;(7) separate the new comprehensive table by genre and create new files for each genre, store them in /data/genres folder    
+  &emsp;(6) drop NAN rows and duplicate rows   
+  &emsp;(7) separate the data by genre and create new files for each genre, store them in '/data/genres' folder    
+  3.folder structure:  
+  &emsp;(1) root folder: '/Final': dashboard.py, CollectData.py, Analysis scripts (Analysis1-6)    
+  &emsp;(2) raw data: '/Final/data':   
+  &emsp;(3) result data: '/Final/output': the screenshot of dashboard, and folders for each analysis  
   
+### DashBoard:  
+  use TKinter and tkMessageBox  
+    ![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/dashboard.png)  
+    
 ### Analysis1:  
   1.aim: calculate the average rating of each movie genre and show in plot chart and heapmap  
   2.process:  
@@ -34,15 +42,15 @@
   3.result:   
       &emsp;(1.1) the average ratings for each genre from every age group  
       &emsp;![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis1/genre_age_fig.png)       
-      &emsp;(1.2) the data of above figure  
+      &emsp;(1.2) the average ratings for each genre from every age group 
       &emsp;![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis1/screenshot of csv files/genre_age.png)  
       &emsp;(2.1) the average ratings for each genre from every gender group    
       &emsp;![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis1/genre_gender_fig.png)    
-      &emsp;&emsp;(2.2) the data of above figure  
+      &emsp;&emsp;(2.2) the average ratings for each genre from every gender group    
       &emsp;![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis1/screenshot of csv files/genre_gender.png)  
-      &emsp;(3.1) the average ratings for each genre from every occupation group  
+      &emsp;(3.1) the average ratings for each genre from every occupation group   
       &emsp;![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis1/genre_occupation_fig.png)  
-      &emsp;(3.2) the data of above figure  7
+      &emsp;(3.2) the average ratings for each genre from every occupation group 
       &emsp;![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis1/screenshot of csv files/genre_occupation.png)
         
 ### Analysis2:  
@@ -90,21 +98,27 @@
       
 ### Analysis4:  
   1.aim: find the taste changes of each age_group of each movie genre  
-  2.process:   
+  2.process: 
+      &emsp;step1: use argparse to get the input(age_group, genre)  
+      &emsp;step2: load data: load the genre_rating file according to the given genre , merge age_group with the rating data
+      &emsp;step3: calculate the average ratings year by year for the given genre movies and age_group   
+      &emsp;step4: generate the plot chart to present the taste change trends by years
+     
+  3.result:  
+      &emsp;(1.1) the average rating change of different years for the given genre and age group (plot chart)  
+      &emsp;![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis4/Comedy_35.png)       
+      &emsp;(1.2) average ratings for the given genre by different age groups of every year  
+      &emsp;![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis4/screenshot of csv files/Action_trends.png)  
+      &emsp;![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis4/screenshot of csv files/Children_trends.png)  
+  
+### Analysis5:  
+  1.aim: get the topk recommendations based on the given data  
+  2.process:  
       &emsp;step1: use argparse to get the input(age, gender, or occupation)  
       &emsp;step2: load data: load the users related tables: users, age, occupation, and merge
                them together to get full user informaiton  
       &emsp;step3: calculate the popularity in each age group, gender group, and occupation catagories   
       &emsp;step4: generate the pie chart to present the ratio each group  
-  3.result:  
-  
-### Analysis5:  
-  1.aim: get the topk recommendations based on the given data  
-  2.process:  
-      &emsp;step1: use argparse to get the input(age_group, genre)  
-      &emsp;step2: load data: load the genre_rating file according to the given genre , merge age_group with the rating data
-      &emsp;step3: calculate the average ratings year by year for the given genre movies and age_group   
-      &emsp;step4: generate the plot chart to present the taste change trends by years   
   3.result:  
   
 ### Analysis6:  
@@ -114,7 +128,4 @@
       &emsp;step2: train the engine first, and use the test data to test
   3.result
 
-### DashBoard:  
-  1.use TKinter and tkMessageBox  
-    ![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/dashboard.png)  
     
