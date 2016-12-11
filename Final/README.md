@@ -56,7 +56,7 @@
       &emsp;![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis1/screenshot of csv files/genre_occupation.png)
         
 ### Analysis2:  
-  1.problem: This part we did some analysis on the sample users to see the properties of the sample. We classifie users by age, gender, and occupation, record the numbers of each group and show the ratio with pie chart  
+  1.problem: This part we did some analysis on the sample users to see the properties of the sample. We classifie users by age, gender, and occupation to see what's the components of our investigated targets and acknowledge what kind of people watch and rate movie more.
   2.args input:   
       &emsp;(1) string 'age' or 'gender' or 'occupation, or 'all'  
   3.process:  
