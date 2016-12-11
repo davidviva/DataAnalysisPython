@@ -106,7 +106,7 @@
      
   3.result:  
       &emsp;(1.1) the average rating change of different years for the given genre and age group (plot chart)  
-      &emsp;![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis4/Comedy_35.png)       
+      &emsp;![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis4/Action35-44.png)       
       &emsp;(1.2) average ratings for the given genre by different age groups of every year  
       &emsp;![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis4/screenshot of csv files/Action_trends.png)  
       &emsp;![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis4/screenshot of csv files/Children_trends.png)  
