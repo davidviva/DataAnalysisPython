@@ -92,7 +92,7 @@ def occupation():
 	sns.heatmap(df_occu)
 	plt.title("Average ratings of each genre by each occupation")
 	plt.ylabel('Genres')
-	plt.xlabel('Genders');
+	plt.xlabel('Occupation');
 	plt.show()
 
 
