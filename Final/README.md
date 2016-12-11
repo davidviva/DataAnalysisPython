@@ -76,11 +76,18 @@
       &emsp;step3: use pivot table to calculate average rating of each gender and group by movie title   
       &emsp;step4: statistic the number of ratings of each movie, filter records that below the threshold   
       &emsp;step5: sort the ratings by gender and store   
-      &emsp;step6: add a new column to store the rating differences between male and female   
+      &emsp;step6: add a new column to store the rating differences between male and female(use 'male rating - female rating')   
       &emsp;step7: pick the topk * 2 (favored by male and female) to generate a barh chart  
   3.result  
-  
-  
+      &emsp;(1.1) top 2 * k movies that get the most differenct average ratings from male and female  
+      &emsp;![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis3/figure_3.png)         
+      &emsp;(1.2) the average ratings of each movie by different genders and sorted by female ratings  
+      &emsp;![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis3/screenshot of csv files/female_favored.png)  
+      &emsp;(1.3) the average ratings of each movie by different genders and sorted by male ratings   
+      &emsp;![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis3/screenshot of csv files/male_favored.png)  
+      &emsp;(1.4) the average ratings of each movie by different genders and the difference of ratings between genders, sorted the data by the difference (use 'male rating - female rating')   
+      &emsp;![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis3/screenshot of csv files/diff.png)  
+      
 ### Analysis4:  
   1.aim: find the taste changes of each age_group of each movie genre  
   2.process:   
