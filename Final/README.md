@@ -138,8 +138,10 @@
   1.Problem: The analysis5 did a very simple recommendation. Sometimes we need more accurate recommendations. Here we recommend registered users movies based on pearson algorithm    
   2.Dataset: both train and test data comes from movielens 100k dataset   
   3.process:  
-      &emsp;step1: define functions based on peason alogrithm    
-      &emsp;step2: train the engine first, and use the test data to test  
+      &emsp;step1: train the engine first, and use the test data to test      
+      &emsp;step2: find similar users based on Pearson algorithm  
+      &emsp;step3: calculate the average similarity scores and find top k users  
+      &emsp;step4: calculate the average rating for the item among the picked k users  
   4.result:  
       &emsp;(1.1) the result contains : (userId: movieId(itemId), predicted rating)  
       &emsp;![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis6/result_fig.png)    
