@@ -135,10 +135,12 @@
       &emsp;![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis5/screenshot of csv files/topK recommendation.png)  
       
 ### Analysis6:  
-  1.aim: recommend registered users movies based on pearson algorithm  
-  2.process:  
-      &emsp;step1: use pearson algorithm to find similar users  
-      &emsp;step2: train the engine first, and use the test data to test
-  3.result
-
+  1.Problem: The analysis5 did a very simple recommendation. Sometimes we need more accurate recommendations. Here we recommend registered users movies based on pearson algorithm    
+  2.Dataset: both train and test data comes from movielens 100k dataset   
+  3.process:  
+      &emsp;step1: define functions based on peason alogrithm    
+      &emsp;step2: train the engine first, and use the test data to test  
+  4.result:  
+      &emsp;(1.1) the result contains : (userId: movieId(itemId), predicted rating)  
+      &emsp;![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis6/result-fit.png)    
     
