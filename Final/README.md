@@ -32,14 +32,16 @@
     ![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/dashboard.png)  
     
 ### Analysis1:  
-  1.aim: calculate the average rating of each movie genre and show in plot chart and heapmap  
-  2.process:  
+  1.problem: There are 3 dimensions(age, gender, occupation) of users that may influence the rating of different genres.So we calculated the average rating of each movie genre. And show the result in plot chart and heapmap to see the different tastes. 
+  2.args input:  
+      &emsp;(1) string 'age' or 'gender' or 'occupation    
+  3.process:  
       &emsp;step1: use argparse to get the input(age, gender, occupation, or all)  
       &emsp;step2: load data: load the comparehensive table, load occupation detail table, and merge
                get the unique_genres set  
       &emsp;step3: calculate average ratings of each genre in each dimension  
       &emsp;step4: generate heatmap and plot chart to present the results  
-  3.result:   
+  4.result:   
       &emsp;(1.1) the average ratings for each genre from every age group  
       &emsp;![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis1/genre_age_fig.png)       
       &emsp;(1.2) the average ratings for each genre from every age group 
@@ -54,14 +56,16 @@
       &emsp;![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis1/screenshot of csv files/genre_occupation.png)
         
 ### Analysis2:  
-  1.aim: classify users by age, gender, and occupation, and show the result with pie chart  
-  2.process:  
+  1.problem: This part we did some analysis on the sample users to see the properties of the sample. We classifie users by age, gender, and occupation, record the numbers of each group and show the ratio with pie chart  
+  2.args input:   
+      &emsp;(1) string 'age' or 'gender' or 'occupation, or 'all'  
+  3.process:  
       &emsp;step1: use argparse to get the input(age, gender, or occupation)   
       &emsp;step2: load data: load the users related tables: users, age, occupation, and merge
                them together to get full user informaiton  
       &emsp;step3: calculate the popularity in each age group, gender group, and occupation catagories   
       &emsp;step4: generate the pie chart to present the ratio each group  
-  3.result:  
+  4.result:  
       &emsp;(1.1) the ratio of number users in each age group (pie chart)  
       &emsp;![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis2/figure_age.png)       
       &emsp;(1.2) the number of users in each age group  
@@ -76,9 +80,11 @@
       &emsp;![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis2/screenshot of csv files/occupation_count.png)  
       
 ### Analysis3:  
-  1.aim: calculate the average rating of each movie and sort it by men and women, then compare the rating of men  
-  &emsp;and women, find the most disagreement movies  
-  2.process:  
+  1.problem: This part we want to see some differences between male and female. So I calculates the average rating of each movie and sort it separately by men and women, then compare the ratings of men and women, find the most k disagreement movies  
+  2.args input:  
+      &emsp;(1) the filter threshold, we will filter movies that don't have enough rating numbers;  
+      &emsp;(2) number k, we will show top k movies that female like while male don't, and top k movies that male like while female don't  
+  3.process:  
       &emsp;step1: use argparse to get the input(the threshold of fillter data, and the topk number)  
       &emsp;step2: load data: load the user_ratings table  
       &emsp;step3: use pivot table to calculate average rating of each gender and group by movie title   
@@ -86,7 +92,7 @@
       &emsp;step5: sort the ratings by gender and store   
       &emsp;step6: add a new column to store the rating differences between male and female(use 'male rating - female rating')   
       &emsp;step7: pick the topk * 2 (favored by male and female) to generate a barh chart  
-  3.result  
+  4.result  
       &emsp;(1.1) top 2 * k movies that get the most differenct average ratings from male and female  
       &emsp;![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis3/figure_3.png)         
       &emsp;(1.2) the average ratings of each movie by different genders and sorted by female ratings  
@@ -97,14 +103,17 @@
       &emsp;![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis3/screenshot of csv files/diff.png)  
       
 ### Analysis4:  
-  1.aim: find the taste changes of each age_group of each movie genre  
-  2.process: 
+  1.problem: Because people's taste(rating) of a given movie genre may change as time, people may want to know what is the trend of people in the same group. We calculated each age group's average ratings for the give movie genre of every year, and present it in a plot chart to show the trends.  
+  2.args input:  
+      &emsp;(1) age group  
+      &emsp;(2) genre  
+  3.process: 
       &emsp;step1: use argparse to get the input(age_group, genre)  
       &emsp;step2: load data: load the genre_rating file according to the given genre , merge age_group with the rating data
       &emsp;step3: calculate the average ratings year by year for the given genre movies and age_group   
       &emsp;step4: generate the plot chart to present the taste change trends by years
      
-  3.result:  
+  4.result:  
       &emsp;(1.1) the average rating change of different years for the given genre and age group (plot chart)  
       &emsp;![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis4/Action35-44.png)       
       &emsp;(1.2) average ratings for the given genre by different age groups of every year  
