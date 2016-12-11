@@ -54,7 +54,19 @@
       &emsp;step3: calculate the popularity in each age group, gender group, and occupation catagories   
       &emsp;step4: generate the pie chart to present the ratio each group  
   3.result:  
-  
+      &emsp;(1.1) the ratio of number users in each age group (pie chart)  
+      &emsp;![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis2/figure_age.png)       
+      &emsp;(1.2) the number of users in each age group  
+      &emsp;![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis2/screenshot of csv files/age_count.png)  
+      &emsp;(2.1) the ratio of number of users in each gender group (pie chart)  
+      &emsp;![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis2/figure_gender.png)       
+      &emsp;(2.2) the number of users in each age group  
+      &emsp;![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis2/screenshot of csv files/gender_count.png)  
+      &emsp;(3.1) the ratio of number of users in each occupation group (pie chart)  
+      &emsp;![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis2/figure_occupation.png)       
+      &emsp;(3.2) the number of users in each age group  
+      &emsp;![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis2/screenshot of csv files/occupation_count.png)  
+      
 ### Analysis3:  
   1.aim: calculate the average rating of each movie and sort it by men and women, then compare the rating of men  
   &emsp;and women, find the most disagreement movies  
