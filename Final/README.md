@@ -121,7 +121,7 @@
       &emsp;![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis4/screenshot of csv files/Children_trends.png)  
   
 ### Analysis5:  
-  1.aim: get the topk recommendations based on the given data  
+  1.Problem: get the topk recommendations based on the given user properties.  
   2.process:  
       &emsp;step1: use argparse to get the input(age, gender, or occupation)  
       &emsp;step2: load data: load the users related tables: users, age, occupation, and merge
@@ -129,7 +129,11 @@
       &emsp;step3: calculate the popularity in each age group, gender group, and occupation catagories   
       &emsp;step4: generate the pie chart to present the ratio each group  
   3.result:  
-  
+      &emsp;(1.1) the top k recommendations based on the user properties (gender = male, age = 25, occupation = artist, top k = 20)
+      &emsp;![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis5/topK recommedation.png)       
+      &emsp;(1.2) all the recommendation candidate movies sorted by ratings  
+      &emsp;![](https://github.com/davidviva/DataAnalysisPython/raw/master/Final/output/Analysis5/screenshot of csv files/topK recommendation.png)  
+      
 ### Analysis6:  
   1.aim: recommend registered users movies based on pearson algorithm  
   2.process:  
